@@ -191,6 +191,13 @@
     color:var(--accent);
   }
   .panel-title svg{width:16px; height:16px; stroke:var(--accent);}
+  .panel-text{
+    margin:0;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.5;
+    color:var(--text);
+  }
 
   /* ---------- 영업시간 ---------- */
   .hours-row{
@@ -345,6 +352,16 @@
   <div class="panel">
     <p class="panel-title">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 17h14M5 17a2 2 0 0 1-2-2v-2l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5v2a2 2 0 0 1-2 2M5 17a2 2 0 0 0 4 0M15 17a2 2 0 0 0 4 0"/>
+      </svg>
+      정비 차종
+    </p>
+    <p class="panel-text" id="vehicleTypeText">정비 가능 차종</p>
+  </div>
+
+  <div class="panel">
+    <p class="panel-title">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
       </svg>
       취급 업무
@@ -388,8 +405,9 @@ const CONFIG = {
     { day: "일요일", time: "휴무", closed: true }
   ],
 
+  vehicleTypeText: "수입차 · 국산차 모두 정비 가능합니다",
+
   services: [
-    { icon: "🚘", name: "수입차·국산차 정비" },
     { icon: "🔧", name: "정기점검" },
     { icon: "🛢️", name: "오일교환" },
     { icon: "❄️", name: "에어컨 가스충전" },
@@ -439,6 +457,7 @@ const CONFIG = {
   document.getElementById('bizName').textContent = CONFIG.businessName;
   document.getElementById('slogan').textContent = CONFIG.slogan;
   document.getElementById('phoneDisplay').textContent = CONFIG.phoneDisplay || CONFIG.phone;
+  document.getElementById('vehicleTypeText').textContent = CONFIG.vehicleTypeText;
   document.getElementById('noticeText').textContent = CONFIG.notice;
   document.getElementById('footerMark').textContent = CONFIG.footerMark;
 
