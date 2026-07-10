@@ -7,12 +7,12 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="피트인 자동차정비소">
-<meta property="og:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 길찾기를 한 번에.">
+<meta property="og:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 주소 확인을 한 번에.">
 <meta property="og:image" content="https://evening466-cloud.github.io/fitin-motors-card/og-image.png">
 <meta property="og:url" content="https://evening466-cloud.github.io/fitin-motors-card/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="피트인 자동차정비소">
-<meta name="twitter:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 길찾기를 한 번에.">
+<meta name="twitter:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 주소 확인을 한 번에.">
 <meta name="twitter:image" content="https://evening466-cloud.github.io/fitin-motors-card/og-image.png">
 <style>
   /* =========================================================
@@ -333,7 +333,7 @@
         </svg>
       </span>
       <span class="btn-text">
-        <span>길찾기</span>
+        <span>주소 복사</span>
         <span class="btn-sub" id="addressMain">주소</span>
       </span>
     </button>
@@ -398,7 +398,7 @@ const CONFIG = {
 
   kakaoId: "min-bj",             // 카카오톡 ID. 비워두면 버튼이 "준비중"으로 자동 전환됩니다.
 
-  address: "가포산로 160",         // 카카오맵 길찾기 검색 및 화면 표시에 사용
+  address: "충청북도 청주시 흥덕구 강서동 가포산로 16",  // 주소 복사 버튼 및 화면 표시에 사용
 
   businessHours: [
     { day: "월~토",  time: "09:00 - 18:30" },
@@ -514,10 +514,11 @@ const CONFIG = {
     });
   }
 
-  // 8) 길찾기 버튼 동작 (카카오맵)
+  // 8) 주소 복사 버튼 동작
   document.getElementById('mapBtn').addEventListener('click', function(){
-    var query = encodeURIComponent(CONFIG.address);
-    window.open('https://map.kakao.com/link/search/' + query, '_blank');
+    copyToClipboard(CONFIG.address, function(){
+      showToast('주소가 복사되었습니다');
+    });
   });
 
 })();
