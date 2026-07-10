@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>피트인 | 자동차정비 · 수리</title>
+<title>피트인 자동차정비소</title>
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="피트인 | 자동차정비 · 수리">
+<meta property="og:title" content="피트인 자동차정비소">
 <meta property="og:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 길찾기를 한 번에.">
 <meta property="og:image" content="https://evening466-cloud.github.io/fitin-motors-card/og-image.png">
 <meta property="og:url" content="https://evening466-cloud.github.io/fitin-motors-card/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="피트인 | 자동차정비 · 수리">
+<meta name="twitter:title" content="피트인 자동차정비소">
 <meta name="twitter:description" content="당신의 차, 완벽하게 책임집니다 — 전화, 카카오톡, 길찾기를 한 번에.">
 <meta name="twitter:image" content="https://evening466-cloud.github.io/fitin-motors-card/og-image.png">
 <style>
@@ -111,18 +111,6 @@
     color:var(--text);
     text-transform:uppercase;
     text-shadow:0 2px 6px rgba(0,0,0,0.6);
-  }
-  .biz-category{
-    display:inline-block;
-    margin-top:8px;
-    padding:4px 12px;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:1px;
-    color:var(--accent);
-    border:1px solid var(--accent-dark);
-    border-radius:20px;
-    background:rgba(232,50,28,0.08);
   }
   .slogan{
     margin:12px 0 0;
@@ -300,7 +288,6 @@
       </svg>
     </div>
     <h1 class="biz-name" id="bizName">피트인</h1>
-    <span class="biz-category" id="bizCategory">자동차정비 · 수리</span>
     <p class="slogan" id="slogan">슬로건</p>
   </div>
 
@@ -386,14 +373,13 @@
    레이아웃(HTML/CSS)은 건드릴 필요가 없습니다.
    ========================================================= */
 const CONFIG = {
-  businessName: "피트인",
-  category: "자동차정비 · 수리",
+  businessName: "피트인 자동차정비소",
   slogan: "당신의 차, 완벽하게 책임집니다",
 
   phone: "010-3525-4070",        // tel: 링크에 사용 (하이픈 포함 표기 가능)
   phoneDisplay: "010-3525-4070", // 버튼에 보여줄 표기
 
-  kakaoId: "",                   // 카카오톡 ID. 비워두면 버튼이 "준비중"으로 자동 전환됩니다.
+  kakaoId: "min-bj",             // 카카오톡 ID. 비워두면 버튼이 "준비중"으로 자동 전환됩니다.
 
   address: "가포산로 160",         // 카카오맵 길찾기 검색 및 화면 표시에 사용
 
@@ -405,7 +391,6 @@ const CONFIG = {
   services: [
     { icon: "🔧", name: "정기점검" },
     { icon: "🛢️", name: "오일교환" },
-    { icon: "🛞", name: "타이어 교체" },
     { icon: "❄️", name: "에어컨 가스충전" },
     { icon: "🔋", name: "배터리 교체" },
     { icon: "🛠️", name: "각종 수리" }
@@ -451,13 +436,12 @@ const CONFIG = {
 
   // 2) 텍스트 콘텐츠 적용
   document.getElementById('bizName').textContent = CONFIG.businessName;
-  document.getElementById('bizCategory').textContent = CONFIG.category;
   document.getElementById('slogan').textContent = CONFIG.slogan;
   document.getElementById('phoneDisplay').textContent = CONFIG.phoneDisplay || CONFIG.phone;
   document.getElementById('noticeText').textContent = CONFIG.notice;
   document.getElementById('footerMark').textContent = CONFIG.footerMark;
 
-  document.title = CONFIG.businessName + ' | ' + CONFIG.category;
+  document.title = CONFIG.businessName;
 
   // 3) 전화 걸기
   var callBtn = document.getElementById('callBtn');
