@@ -384,11 +384,12 @@ const CONFIG = {
   address: "가포산로 160",         // 카카오맵 길찾기 검색 및 화면 표시에 사용
 
   businessHours: [
-    { day: "평일",        time: "09:00 - 18:30" },
-    { day: "토·일·공휴일", time: "휴무", closed: true }
+    { day: "월~토",  time: "09:00 - 18:30" },
+    { day: "일요일", time: "휴무", closed: true }
   ],
 
   services: [
+    { icon: "🚘", name: "수입차·국산차 정비" },
     { icon: "🔧", name: "정기점검" },
     { icon: "🛢️", name: "오일교환" },
     { icon: "❄️", name: "에어컨 가스충전" },
