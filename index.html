@@ -218,10 +218,6 @@
   .hours-time{font-weight:700; color:var(--text-muted);}
   .hours-row.is-closed .hours-time{color:var(--accent);}
 
-  /* ---------- 주소 ---------- */
-  .address-main{font-size:14px; font-weight:700; color:var(--text);}
-  .address-detail{font-size:12px; font-weight:500; color:var(--text-muted); margin-top:4px;}
-
   /* ---------- 업무 목록 ---------- */
   .services-grid{
     display:grid;
@@ -318,7 +314,7 @@
         </svg>
       </span>
       <span class="btn-text">
-        <span>전화 걸기</span>
+        <span>정비문의</span>
         <span class="btn-sub" id="phoneDisplay">010-0000-0000</span>
       </span>
     </a>
@@ -369,17 +365,6 @@
     <div class="services-grid" id="servicesList"></div>
   </div>
 
-  <div class="panel">
-    <p class="panel-title">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-      </svg>
-      오시는 길
-    </p>
-    <div class="address-main" id="addressMainPanel">주소</div>
-    <div class="address-detail" id="addressDetail"></div>
-  </div>
-
   <div class="checker thin"></div>
 
   <div class="notice">
@@ -411,7 +396,6 @@ const CONFIG = {
   kakaoId: "",                   // 카카오톡 ID. 비워두면 버튼이 "준비중"으로 자동 전환됩니다.
 
   address: "가포산로 160",         // 카카오맵 길찾기 검색 및 화면 표시에 사용
-  addressDetail: "지번: 강서동 372",
 
   businessHours: [
     { day: "평일",        time: "09:00 - 18:30" },
@@ -503,10 +487,8 @@ const CONFIG = {
     servicesList.appendChild(chip);
   });
 
-  // 6) 주소 표시
+  // 6) 주소 표시 (길찾기 버튼 서브텍스트)
   document.getElementById('addressMain').textContent = CONFIG.address;
-  document.getElementById('addressMainPanel').textContent = CONFIG.address;
-  document.getElementById('addressDetail').textContent = CONFIG.addressDetail || '';
 
   // 7) 카카오톡 버튼 동작
   var kakaoBtn = document.getElementById('kakaoBtn');
